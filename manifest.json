@@ -1,0 +1,27 @@
+{
+	"name": "YouTube Comments Remover",
+	"version": "1.0",
+	"description": "A switch to remove the comments section from a Youtube video.",
+	"permissions": [ "activeTab", "declarativeContent", "storage" ],
+	"page_action": {	
+      "default_popup": "popup.html"
+    },
+    "background": {
+    	"persistent": false,
+	    "scripts": ["background.js"]
+	},
+	"content_scripts": [
+   		{
+     		"matches": ["https://www.youtube.com/*"],
+     		"all_frames": true,
+     		"js": ["comment_remover.js"]
+   		}
+ 	],
+	"icons": {
+		"16": "images/comment-remove-button-16.png",
+		"32": "images/comment-remove-button-32.png",
+		"48": "images/comment-remove-button.svg",
+		"128": "images/comment-remove-button-128.png"
+	},
+	"manifest_version": 2
+}
