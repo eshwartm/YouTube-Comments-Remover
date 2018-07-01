@@ -50,7 +50,7 @@ chrome.storage.sync.get('comments', function(result) {
     if (result.commentsTurnedOff === 1) {
     	document.addEventListener('DOMSubtreeModified', manageIntervalForRemoveElement, false);
     } else {
-		document.removeEventListener('DOMSubtreeModified', manageIntervalForRemoveElement, false);
+	document.removeEventListener('DOMSubtreeModified', manageIntervalForRemoveElement, false);
     }
 });
 
